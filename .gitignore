@@ -1,0 +1,11 @@
+# bytecode & checkpoints
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# secrets
+.env
+
+# large/local artifacts (keep these out of git)
+*.pkl
+tmdb_5000_*.csv
