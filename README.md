@@ -3,7 +3,8 @@
 An interactive Movie Recommendation Web App built with Streamlit.
 It recommends movies based on content similarity and displays beautiful movie posters using the TMDb API.
 
-🔗 Live Demo: Movie Recommender App
+🔗 **Live Demo**: [Movie Recommender App](https://movie-recommender-system-boishik.streamlit.app/)
+
 
 ✨ Features
 
