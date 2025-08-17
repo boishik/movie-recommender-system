@@ -32,11 +32,3 @@ gdown – for downloading large ML artifacts from Google Drive
 TMDb API – posters & metadata
 
 
-📂 Project Structure
-movie-recommender-system/
-│── app.py                # Main Streamlit app
-│── requirements.txt      # Dependencies
-│── .env.sample           # Example API key file
-│── .gitignore            # Ignored files (pkl, env, etc.)
-│── movie_recommender_system.ipynb   # Notebook (exploration & preprocessing)
-│── data/                 # Downloaded artifacts (auto via gdown)
