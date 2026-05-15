@@ -45,17 +45,15 @@ def _download(url: str, dest: pathlib.Path):
     dest.parent.mkdir(parents=True, exist_ok=True)
 
     if "drive.google.com" in url:
-        # gdown handles Google Drive's confirmation interstitials for large files
-        gdown.download(url, str(dest), quiet=False, fuzzy=True)
+        gdown.download(url, str(dest), quiet=False)
     else:
         with requests.get(url, stream=True) as r:
             r.raise_for_status()
             with open(dest, "wb") as f:
-                for chunk in r.iter_content(chunk_size=1 << 20):  # 1MB chunks
+                for chunk in r.iter_content(chunk_size=1 << 20):
                     if chunk:
                         f.write(chunk)
 
-    # Validate: fail fast if we saved an HTML page or a tiny file
     if _is_probably_html(dest) or dest.stat().st_size < 1000:
         raise RuntimeError(
             f"Downloaded file at {dest} does not look like a pickle. "
